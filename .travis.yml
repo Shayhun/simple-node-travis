@@ -15,10 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node ./Dockerfile .
-  - docker tag simple-node shayhun/simple-node:latest
+  - docker build -t simple_node ./Dockerfile .
+  - docker tag simple-node shayhun/simple_node:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push shayhun/simple-node
+  - docker push shayhun/simple_node
 
